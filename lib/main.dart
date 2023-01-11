@@ -1,6 +1,20 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_app_check/firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  // Activate app check after initialization, but before
+  // usage of any Firebase services.
+  await FirebaseAppCheck.instance
+      // Your personal reCaptcha public key goes here:
+      .activate(
+    androidProvider: kDebugMode ? AndroidProvider.debug : AndroidProvider.playIntegrity,
+  );
   runApp(const MyApp());
 }
 
@@ -50,7 +64,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
+  Future<void> _incrementCounter() async {
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -59,6 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
     });
+    String? appCheckToken;
+    try {
+      appCheckToken = await FirebaseAppCheck.instance.getToken();
+    } catch (e) {
+      print(e.toString());
+    }
+    print("appCheckToken: $appCheckToken");
   }
 
   @override

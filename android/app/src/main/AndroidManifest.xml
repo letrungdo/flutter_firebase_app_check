@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.flutter_firebase_app_check">
+    package="com.dolt.flutter_firebase_app_check">
    <application
         android:label="flutter_firebase_app_check"
         android:name="${applicationName}"

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "821323384808",
+    "project_id": "ffappcheck1",
+    "storage_bucket": "ffappcheck1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:821323384808:android:2060d9436c57a56703465d",
+        "android_client_info": {
+          "package_name": "com.dolt.flutter_firebase_app_check"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "821323384808-9l9g7hjv33omlmc165k1vj59as8i5f29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0rNK6-G56aTF3Y86tflmMoz6HbmlF6jA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "821323384808-9l9g7hjv33omlmc165k1vj59as8i5f29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
